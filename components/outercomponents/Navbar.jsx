@@ -19,7 +19,7 @@ const Navbar = () => {
 
 
   return (
-    <div className='  bg-[#F1EFF0] hidden xl:block 2xl:justify-center 2xl:flex   ' >
+    <div className='  bg-[#F1EFF0] hidden xl:block 2xl:justify-center 2xl:flex    ' >
 
 
 
@@ -543,7 +543,7 @@ onMouseLeave={()=>setOpen3(false)}
 
   </li>
 {/* 8 */}
-  <li className='hover:bg-white p-[10px] cursor-pointer'>
+  <li className=' p-[10px] cursor-pointer'>
     <p>ALL PRODUCTS
 </p>
   </li>

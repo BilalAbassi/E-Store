@@ -5,7 +5,7 @@ import {FiSearch} from "react-icons/fi"
 const TopNav = () => {
   return (
  
- <div className=' max-w-[4000px]  bg-gradient-to-l from-[#60469B] to-[#3B388E]  container 2xl:flex 2xl:justify-center' >
+ <div className=' max-w-[4000px]  bg-gradient-to-l from-[#60469B] to-[#3B388E] sticky  container 2xl:flex 2xl:justify-center' >
 <div className='xl:grid hidden  
  grid-cols-4 
   overflow-hidden  text-white items-center

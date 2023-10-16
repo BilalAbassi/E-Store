@@ -1,67 +1,38 @@
-"use client"
-import React, { useRef, useEffect } from "react";
+"use client";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import image1 from "../../public/1.jpg";
-import image2 from "../../public/2.jpeg";
-import Image from "next/image";
+
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/autoplay";
-const Slider = () => {
-  const swiperRef = useRef(null);
-  useEffect(() => {
-    const swiper = swiperRef.current.swiper;
 
-    // Enable autoplay
-    swiper.autoplay.start();
-  }, []);
+// import required modules
+import { EffectFade, Navigation, Pagination } from "swiper/modules";
+
+export default function Slider() {
   return (
     <>
       <Swiper
-        ref={swiperRef}
-        pagination={{ clickable: true }}
-        Autoplay={{ Delay: 1500 }}
-        modules={[Navigation, Pagination, Autoplay]}
-        className="max-w-[4000px]"
+        spaceBetween={30}
+        effect={"fade"}
+        loop={true}
+        navigation={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[EffectFade, Navigation, Pagination]}
+        className="mySwiper"
       >
         <SwiperSlide>
-          <div>
-            <Image
-              src={image1}
-              className="w-[426px] h-[190px] md:w-[768px] md:h-[240px] lg:w-[1024px]
-               lg:h-[320px] xl:w-[1440px] xl:h-[450px]"
-            />
-          </div>
+          <img src="./1.jpeg" />
         </SwiperSlide>
         <SwiperSlide>
-          <div>
-            <Image
-              src={image2}
-              className="w-[426px] h-[190px] md:w-[768px] md:h-[240px] lg:w-[1024px] lg:h-[320px] xl:w-[1440px] xl:h-[450px]"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <Image
-              src={image1}
-              className="w-[426px] h-[190px] md:w-[768px] md:h-[240px] lg:w-[1024px] lg:h-[320px] xl:w-[1440px] xl:h-[450px]"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <Image
-              src={image2}
-              className="w-[426px] h-[190px] md:w-[768px] md:h-[240px] lg:w-[1024px] lg:h-[320px] xl:w-[1440px] xl:h-[450px]"
-            />
-          </div>
+          <img src="./2.jpeg" />
         </SwiperSlide>
       </Swiper>
     </>
   );
-};
-
-export default Slider;
+}
